@@ -9,9 +9,10 @@ $(document).ready(function(){
   $("button").click(function(){
     let exchange = $("#exchange option:selected").val();
     let initial = $("#initial option:selected").val();
+    console.log(initial)
     let amount = $("#amount").val();
     let currencyService = new CurrencyService();
-    currencyService.getExchangeForCountry(exchange,amount).then((result)=>{
+    currencyService.getExchangeForCountry(exchange,initial, amount).then((result)=>{
       var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: exchange,

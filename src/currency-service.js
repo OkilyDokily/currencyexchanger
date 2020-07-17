@@ -12,13 +12,17 @@ export class CurrencyService{
     
     if(exchangeRates.status === 200){
       let jsonified = await exchangeRates.json();
-
+      console.log(jsonified);
       if(jsonified["error-type"] === "invalid-key"){
         throw Error("You aren't using a valid API key.")
       }
 
+      if(jsonified["unsupported-code"] === "invalid-key"){
+        throw Error("You aren't using a supported country code.")
+      }
+      
       if(jsonified.result === "error"){//this error comes from the exchangerate-api site
-        throw Error ("There was something wrong with you query. Either the specified country is unavailable at the currency exchanger site, or you are making a query that is ill-formed/not compatible with this applications access level.");
+        throw Error ("There was something wrong with you query. You may be making a query that is ill-formed/not compatible with this applications access level.");
       }
       let conversionRate = jsonified["conversion_rates"][exchange];
       return conversionRate * amount; 
