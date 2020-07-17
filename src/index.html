@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Exchanger</title>
+</head>
+<body>
+  <div class="jumbotron"><h1>Currency Exchanger</h1></div>
+  <div id="body">
+    <label for="countries">Select a country:</label>
+
+    <select name="countries" id="countries">
+      <option value="GBP">United Kingdom</option>
+      <option value="ILS">Israel</option>
+      <option value="JPY">Japan</option>
+      <option value="PEN">Peru</option>
+      <option value="PHP">Phillipines</option>
+      <option value="ZZZ">Zoolandia</option>
+    </select>
+    <br>
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" id="amount">
+    <button>Get value based on current exchange rate.</button>
+    <div id="results"></div>
+  </div>
+ 
+</body>
+</html>

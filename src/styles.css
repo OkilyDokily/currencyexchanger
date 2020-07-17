@@ -1,0 +1,16 @@
+#body{
+  margin: auto;
+  margin-top: 30px;
+  background-color: blanchedalmond;
+  width: 330px;
+  padding: 5px;
+}
+
+body{
+  background-color: chocolate;
+}
+
+.jumbotron{
+  height: 100px;
+  background-color: coral;
+}
