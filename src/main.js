@@ -7,13 +7,14 @@ import './styles.css';
 
 $(document).ready(function(){
   $("button").click(function(){
-    let country = $("#countries option:selected").val();
+    let exchange = $("#exchange option:selected").val();
+    let initial = $("#initial option:selected").val();
     let amount = $("#amount").val();
     let currencyService = new CurrencyService();
-    currencyService.getExchangeForCountry(country,amount).then((result)=>{
+    currencyService.getExchangeForCountry(exchange,amount).then((result)=>{
       var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: country,
+        currency: exchange,
       });
       let formattedResult = formatter.format(result);
       $("#results").html(formattedResult);
