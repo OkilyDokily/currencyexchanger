@@ -40,22 +40,21 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
- 
   $("#button").click(function(){
     let exchange = $("#exchange option:selected").val();
     let initial = $("#initial option:selected").val();
     
     let amount = $("#amount").val();
     let currencyService = new CurrencyService();
-    currencyService.getExchangeForCountry(exchange,initial, amount).then((result)=>{
-      var formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: exchange,
-      });
-      let formattedResult = formatter.format(result);
-      $("#results").html(formattedResult);
-    }).catch((error)=>{
-      $("#results").html(error.message);
+    let conversion = currencyService.getExchangeForCountry(exchange,initial, amount);
+      
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: exchange,
     });
+
+    let formattedResult = formatter.format(conversion);
+    $("#results").html(formattedResult);
+  
   });
 });
