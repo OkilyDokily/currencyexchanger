@@ -21,14 +21,9 @@ export class CurrencyService{
     return jsonified["conversion_rates"];
   }
 
-  getExchangeForCountry(exchange, initial, amount){
-    
-    let obj = JSON.parse(sessionStorage.countries);
-    
-    
-    let usd =  amount / obj[initial];
-    let conversion = usd * obj[exchange]; 
-    return conversion;
+  returnExchangeRate(amount, initial, exchange ){
+    let usd =  amount / initial;
+    return usd * exchange;
   }
 
   detectErrors(jsonified, status){

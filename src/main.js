@@ -24,9 +24,8 @@ $(document).ready(function(){
       let initial = $("#initial2 option:selected").val();
       let amount = $("#amount2").val();
 
-      let usd =  amount / result[initial];
-      let conversion = usd * result[exchange]; 
-      
+      let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
+     
       var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: exchange,
@@ -34,27 +33,24 @@ $(document).ready(function(){
       let formattedResult = formatter.format(conversion);
       $("#results2").html(formattedResult);
     });
+
+    $("#button").click(function(){
+      let exchange = $("#exchange option:selected").val();
+      let initial = $("#initial option:selected").val();
+      
+      let amount = $("#amount").val();
+      let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
+        
+      var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: exchange,
+      });
+  
+      let formattedResult = formatter.format(conversion);
+      $("#results").html(formattedResult);
+    
+    });
   })();
 });
 
 
-$(document).ready(function(){
-
-  $("#button").click(function(){
-    let exchange = $("#exchange option:selected").val();
-    let initial = $("#initial option:selected").val();
-    
-    let amount = $("#amount").val();
-    let currencyService = new CurrencyService();
-    let conversion = currencyService.getExchangeForCountry(exchange,initial, amount);
-      
-    var formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: exchange,
-    });
-
-    let formattedResult = formatter.format(conversion);
-    $("#results").html(formattedResult);
-  
-  });
-});
