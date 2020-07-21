@@ -11,7 +11,7 @@ export class CurrencyService{
     }
     catch(err)
     { //provide a somewhat more helpful fetch error than "failed to fetch"
-      throw Error("You made a request to a site that does not exist or is down. Or your OWN network is down.");
+      throw Error("You made a request to an api server that does not exist or is down. Or your OWN network is down.");
     }
 
     let jsonified = await exchangeRates.json();
