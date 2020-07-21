@@ -14,7 +14,7 @@ _Page gives user info about their age on different planets including life expect
                                   |           |           
 ## Setup/Installation Requirements
 
-Install node and npm. Clone/download the repo and type 'npm install' inside of a terminal windows in the same directory is the the cloned repo.
+Install node and npm. Clone/download the repo and type 'npm install' inside of a terminal windows in the same directory is the the cloned repo. Get a key from https://www.exchangerate-api.com/. Add a .env file and add the following line to the file. "API_KEY = [Your API Key].
 
 ## Known Bugs
 
