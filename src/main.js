@@ -25,31 +25,44 @@ $(document).ready(function(){
         let initial = $("#initial2 option:selected").val();
         let amount = $("#amount2").val();
 
-        let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
-      
-        var formatter = new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: exchange,
-        });
-        let formattedResult = formatter.format(conversion);
-        $("#results2").html(formattedResult);
+        try{
+         
+          let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
+        
+          var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: exchange,
+          });
+          let formattedResult = formatter.format(conversion);
+          $("#results2").html(formattedResult);
+        }
+        catch(err){
+          $("#results2").html(err);
+        }
       });
 
       $("#button").click(function(){
+
+
         let exchange = $("#exchange option:selected").val();
         let initial = $("#initial option:selected").val();
         
         let amount = $("#amount").val();
-        let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
+        try{
+          let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
           
-        var formatter = new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: exchange,
-        });
-    
-        let formattedResult = formatter.format(conversion);
-        $("#results").html(formattedResult);
-    
+          var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: exchange,
+          });
+      
+          let formattedResult = formatter.format(conversion);
+          $("#results").html(formattedResult);
+        }
+        catch(err){
+          $("#results").html(err);
+        }
+       
       });
     }
     catch(err){

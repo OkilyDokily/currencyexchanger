@@ -22,9 +22,25 @@ export class CurrencyService{
   }
 
   returnExchangeRate(amount, initial, exchange ){
-    let usd =  amount / initial;
-    return usd * exchange;
+    if(amount && initial && exchange)
+    {
+      let usd =  amount / initial;
+      return usd * exchange;
+    }
+    else{
+      
+      if (!amount){
+        throw Error("You need an amount");
+      }
+      else if (!initial){
+        throw Error("Your initial value code does not exist in this api.");
+      }
+      else if  (!exchange){
+        throw Error("Your exchange value code does not exist in this api.");
+      }
+    }
   }
+    
 
   detectErrors(jsonified, status){
     if(status === 200){
