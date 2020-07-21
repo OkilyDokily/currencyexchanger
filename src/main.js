@@ -26,9 +26,8 @@ $(document).ready(function(){
         let amount = $("#amount2").val();
 
         try{
-         
           let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
-        
+          
           var formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: exchange,
@@ -42,15 +41,13 @@ $(document).ready(function(){
       });
 
       $("#button").click(function(){
-
-
         let exchange = $("#exchange option:selected").val();
         let initial = $("#initial option:selected").val();
-        
         let amount = $("#amount").val();
+        
         try{
           let conversion = currencyService.returnExchangeRate(amount, result[initial],result[exchange]);
-          
+      
           var formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: exchange,
