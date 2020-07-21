@@ -13,7 +13,7 @@ $(document).ready(function(){
       let result = await currencyService.prePopulated();
       let countries = Object.keys(result);
       let text = "";
-      countries.forEach(countryCode =>{
+      countries.forEach(countryCode =>{ //we prepopulate the menus with data from the api.
         text+= `<option value="${countryCode}">${countryCode}</option>`;
       });
       $("#initial2").html(text);
