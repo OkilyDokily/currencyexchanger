@@ -9,12 +9,15 @@
 ## Description
 
 _A page demonstrates basic ES6_
-_Page gives user info about their age on different planets including life expectancy_
+_Page exchanges various currencies_
 
                                   |           |           
 ## Setup/Installation Requirements
 
-Install node and npm. Clone/download the repo and type 'npm install' inside of a terminal windows in the same directory is the the cloned repo. Get a key from https://www.exchangerate-api.com/. Add a .env file and add the following line to the file. "API_KEY = [Your API Key].
+* Install node and npm
+* Clone/download the repo and type 'npm install' inside of a terminal windows in the same directory is the the cloned repo. 
+* Get a key from https://www.exchangerate-api.com/. 
+* Add a .env file and add the following line to the file. "API_KEY = [Your API Key].
 
 ## Known Bugs
 
