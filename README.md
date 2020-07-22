@@ -9,9 +9,7 @@
 ## Description
 
 _A page demonstrates basic ES6_
-_Page exchanges various currencies_
-
-                                  |           |           
+_Page exchanges various currencies_        
 ## Setup/Installation Requirements
 
 * Install node and npm
