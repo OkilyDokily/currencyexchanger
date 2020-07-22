@@ -9,8 +9,7 @@ export class CurrencyService{
     try{
       var exchangeRates = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
     }
-    catch(err)
-    { //provide a somewhat more helpful fetch error than "failed to fetch"
+    catch(err){ //provide a somewhat more helpful fetch error than "failed to fetch"
       throw Error("You made a request to an api server that does not exist or is down. Or your OWN network is down.");
     }
 
@@ -22,13 +21,11 @@ export class CurrencyService{
   }
 
   returnExchangeRate(amount, initial, exchange ){
-    if(amount && initial && exchange)
-    {
+    if(amount && initial && exchange){
       let usd =  amount / initial;
       return usd * exchange;
     }
-    else{
-      
+    else{  
       if (!amount){
         throw Error("You need an amount");
       }
