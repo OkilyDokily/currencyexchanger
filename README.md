@@ -8,7 +8,7 @@
 
 ## Description
 
-_A page demonstrates basic ES6_
+_A page that demonstrates basic ES6_
 _Page exchanges various currencies_        
 ## Setup/Installation Requirements
 
